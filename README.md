@@ -33,7 +33,7 @@ Contact
 
 ### Ordering items
 
-![image alt](https://github.com/ashika43/Ecommerce_application/blob/c312da47dc7392a681d60b40c0a126f85ae2c389/ordering.png)
+![image alt](https://github.com/ashika43/Ecommerce_application/blob/c9fb6cc74e6bd6c55446d12cd25f3550b8f2ca63/ordering.png)
 
 ### Confirm the order
 
