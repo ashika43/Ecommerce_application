@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Order Summary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <style>
+    body {
+      background: #fff3e0;
+      font-family: Arial, sans-serif;
+    }
+
+    .summary-container {
+      background: white;
+      max-width: 500px;
+      margin: 60px auto;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: #9d5f1d;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .summary-item {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .btn-custom {
+      margin: 10px 5px;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn-add {
+      background-color: #d69550;
+      color: white;
+    }
+
+    .btn-add:hover {
+      background-color: #9d5f1d;
+    }
+
+    .btn-confirm {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .btn-confirm:hover {
+      background-color: #388e3c;
+    }
+
+    .btn-print {
+      background-color: #2196f3;
+      color: white;
+      display: none;
+    }
+
+    .btn-print:hover {
+      background-color: #0b7dda;
+    }
+
+    /* Print styles */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+
+      #printSection, #printSection * {
+        visibility: visible;
+      }
+
+      #printSection {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .btn-custom {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="summary-container">
+    <h2>Order Summary</h2>
+
+    <!-- Only this part will be printed -->
+    <div id="printSection">
+      <div id="summaryContent"></div>
+      <p class="summary-item mt-4"><strong>Thank you for your order!</strong></p>
+    </div>
+
+    <div>
+      <button class="btn-custom btn-add" onclick="addMoreItems()">Add Items</button>
+      <button class="btn-custom btn-confirm" onclick="confirmOrder()">Confirm Order</button>
+      <button class="btn-custom btn-print" id="printBtn" onclick="printOrder()">Print Order</button>
+    </div>
+  </div>
+
+  <script>
+    const order = JSON.parse(localStorage.getItem("orderData"));
+    const summary = document.getElementById("summaryContent");
+    const printBtn = document.getElementById("printBtn");
+
+    if (order) {
+      summary.innerHTML = `
+        <p class="summary-item"><strong>Item:</strong> ${order.item}</p>
+        <p class="summary-item"><strong>Price:</strong> $${order.price.toFixed(2)}</p>
+        <p class="summary-item"><strong>Quantity:</strong> ${order.quantity}</p>
+        <p class="summary-item"><strong>Total:</strong> $${order.total.toFixed(2)}</p>
+      `;
+    } else {
+      summary.innerHTML = `<p>No order data found.</p>`;
+    }
+
+    function addMoreItems() {
+      window.location.href = "cake.html";
+    }
+
+    function confirmOrder() {
+      const confirmed = confirm("Do you want to confirm your order?\nClick OK to confirm.");
+      if (confirmed) {
+        alert("Order confirmed! You can now print your order.");
+        printBtn.style.display = "inline-block";
+      }
+    }
+
+    function printOrder() {
+      window.print();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="order.css">
+</head>
+<body>
+
+  <div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="order-container text-center">
+      <h2 class="order-header mb-4">Cake Order</h2>
+
+      <img src="c10.png" alt="Cake Image" class="img-fluid cake-img mb-3">
+
+      <h3 class="text-dark">Bir Cup Cake</h3>
+      <p class="price-tag">Price: $230.00</p>
+
+      <div class="quantity-control d-flex justify-content-center align-items-center my-3">
+        <button onclick="changeQuantity(-1)">−</button>
+        <input type="text" id="quantity" value="1" readonly class="mx-3">
+        <button onclick="changeQuantity(1)">+</button>
+      </div>
+
+      <button class="btn btn-success mt-2" onclick="placeOrder()">Place Order</button>
+      <br>
+      <a href="cake.html" class="btn btn-outline-secondary mt-3">Add Items</a>
+    </div>
+  </div>
+
+  <script>
+    function changeQuantity(amount) {
+      const quantityInput = document.getElementById('quantity');
+      let current = parseInt(quantityInput.value);
+      if (current + amount >= 1) {
+        quantityInput.value = current + amount;
+      }
+    }
+
+    function placeOrder() {
+      const quantity = document.getElementById('quantity').value;
+      const order = {
+        item: "Bir Cup Cake",
+        price: 230.00,
+        quantity: parseInt(quantity),
+        total: 230.00 * parseInt(quantity)
+      };
+      localStorage.setItem('orderData', JSON.stringify(order));
+      window.location.href = 'summary.html';
+    }
+  </script>
+
+</body>
+</html>

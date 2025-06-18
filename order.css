@@ -1,0 +1,76 @@
+body {
+  background: linear-gradient(to right, #fff3e0, #ffe0b2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+.order-container {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  max-width: 450px;
+  width: 100%;
+}
+
+.order-header {
+  color: #9d5f1d;
+  font-weight: bold;
+}
+
+.cake-img {
+  border-radius: 10px;
+  border: 2px solid #f0c68b;
+  max-width: 300px;
+}
+
+.quantity-control button {
+  width: 45px;
+  height: 45px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #f8d7a8;
+  border: none;
+  color: #9d5f1d;
+  border-radius: 8px;
+}
+
+.quantity-control button:hover {
+  background-color: #f1c27b;
+}
+
+#quantity {
+  width: 60px;
+  height: 45px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px;
+  border: 2px solid #f0c68b;
+  color: #9d5f1d;
+}
+
+.price-tag {
+  font-size: 20px;
+  font-weight: bold;
+  color: #9d5f1d;
+}
+
+.btn-success {
+  background-color: #d69550;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 25px;
+  border-radius: 8px;
+}
+
+.btn-success:hover {
+  background-color: #9d5f1d;
+}
+
+.btn-outline-secondary {
+  font-weight: bold;
+  padding: 8px 20px;
+  border-radius: 8px;
+}
