@@ -31,6 +31,14 @@ Contact
 
 ![image alt](https://github.com/ashika43/Ecommerce_application/blob/32b1a521c9762f89f0fa7b820db9cdb514cb6297/contact.jpeg)
 
+### Ordering items
+
+![image alt](https://github.com/ashika43/Ecommerce_application/blob/c312da47dc7392a681d60b40c0a126f85ae2c389/ordering.png)
+
+### Confirm the order
+
+![image alt](https://github.com/ashika43/Ecommerce_application/blob/c312da47dc7392a681d60b40c0a126f85ae2c389/Confirmation.png)
+
 
 ## Stack Used
 - [HTML](#HTML)
