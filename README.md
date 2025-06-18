@@ -37,7 +37,7 @@ Contact
 
 ### Confirm the order
 
-![image alt](https://github.com/ashika43/Ecommerce_application/blob/c312da47dc7392a681d60b40c0a126f85ae2c389/Confirmation.png)
+![image alt](https://github.com/ashika43/Ecommerce_application/blob/c6feb2865b77f0729896d14f01a8eb2dbde37308/summary.png)
 
 
 ## Stack Used
